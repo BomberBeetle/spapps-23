@@ -1,4 +1,6 @@
-[gd_scene load_steps=4 format=3 uid="uid://cmjf5vh2ho515"]
+[gd_scene load_steps=5 format=3 uid="uid://cmjf5vh2ho515"]
+
+[ext_resource type="Script" path="res://main.gd" id="1_dx432"]
 
 [sub_resource type="ProceduralSkyMaterial" id="ProceduralSkyMaterial_nwxvu"]
 sky_top_color = Color(0, 0, 0, 1)
@@ -14,6 +16,9 @@ background_mode = 2
 sky = SubResource("Sky_exytv")
 
 [node name="Node3D" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152808, 0, 0.779027)
+script = ExtResource("1_dx432")
 
 [node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00395745, 0.274673, 2.46739)
 environment = SubResource("Environment_yl4jn")

@@ -1,3 +1,7 @@
 [gd_scene format=3 uid="uid://dtrutjgyikvba"]
 
 [node name="SpatialObject" type="Node3D"]
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+
+[node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]

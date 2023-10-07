@@ -5,7 +5,7 @@ import json
 
 im = cv2.imread("image_3-color_samp.png")
 
-# cv2.imshow('src', im)
+cv2.imshow('src', im)
 
 kernel = np.array([[1, 1, 1], [1, -8, 1], [1, 1, 1]], dtype=np.float32)
 imgLaplacian = cv2.filter2D(im, cv2.CV_32F, kernel)
@@ -47,23 +47,34 @@ for i in range(len(contours)):
     x,y,w,h = cv2.boundingRect(contours[i])
     objects[i] = {"x": x, "y": y, "w": w, "h":h}
     im_crop = im[y:y+h, x:x+w]
-    cv2.imwrite("objects/object{}.png".format(i), im_crop)
+    im_crop = cv2.cvtColor(im_crop, cv2.COLOR_BGR2BGRA)
+    mask = np.zeros((im.shape[0] , im.shape[1]), np.uint8)
+    cv2.drawContours(mask, contours, i, (255), -1)
+    
+    mask_crop = mask[y:y+h, x:x+w]
+
+    print(im_crop.shape)
+    print(mask_crop.shape)
+
+    im_masked = cv2.bitwise_and(im_crop, im_crop, mask=mask_crop)
+
+    cv2.imwrite("objects/object{}.png".format(i), im_masked)
 
 with open('objects.json', 'w') as f:
     json.dump(objects, f)
 
 # Create the marker image for the watershed algorithm
 
-#markers = np.zeros(dist.shape, dtype=np.int32)
+markers = np.zeros(dist.shape, dtype=np.int32)
 
-#for i in range(len(contours)):
-# cv2.drawContours(markers, contours, i, (i+1), -1)
+for i in range(len(contours)):
+    cv2.drawContours(markers, contours, i, (i+1), -1)
 
 # Draw the background marker
-#cv2.circle(markers, (5,5), 3, (255,255,255), -1)
+cv2.circle(markers, (5,5), 3, (255,255,255), -1)
 
-#markers_8u = (markers * 10).astype('uint8')
-#cv2.imshow('Markers', markers_8u)
+markers_8u = (markers * 10).astype('uint8')
+cv2.imshow('Markers', markers_8u)
 
 #cv2.watershed(imgResult, markers)
 
@@ -85,4 +96,4 @@ with open('objects.json', 'w') as f:
 # Visualize the final image
 #cv2.imshow('Final Result', dst)
 
-#cv2.waitKey(0)
+cv2.waitKey(0)
