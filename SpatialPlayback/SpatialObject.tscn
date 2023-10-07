@@ -1,0 +1,3 @@
+[gd_scene format=3 uid="uid://dtrutjgyikvba"]
+
+[node name="SpatialObject" type="Node3D"]
