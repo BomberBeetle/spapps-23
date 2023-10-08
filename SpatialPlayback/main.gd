@@ -41,7 +41,7 @@ func _ready():
 		
 		new_object.get_node("AudioStreamPlayer3D").stream = wav
 		
-		new_object.transform.origin = Vector3((objs_dict[obj_idx]["x"]-((max_x - min_x)/2) - min_x)/100, -(objs_dict[obj_idx]["y"]-(max_y/2))/100, -size/20000)
+		new_object.transform.origin = Vector3((objs_dict[obj_idx]["x"]-((max_x - min_x)/2) - min_x)/100, -(objs_dict[obj_idx]["y"]-(max_y/2))/100, -size/30000)
 		add_child(new_object)
 	
 		new_object.get_node("AudioStreamPlayer3D").stream_paused = false

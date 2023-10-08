@@ -9,10 +9,12 @@
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
 stream = ExtResource("1_37jft")
 attenuation_model = 2
-unit_size = 0.5
+unit_size = 0.1
+max_db = -6.24
 autoplay = true
 panning_strength = 3.0
 emission_angle_enabled = true
-emission_angle_degrees = 30.0
+emission_angle_degrees = 55.1
+emission_angle_filter_attenuation_db = -40.2
 attenuation_filter_db = 0.0
 doppler_tracking = 1
