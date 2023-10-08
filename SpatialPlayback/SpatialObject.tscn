@@ -1,7 +1,18 @@
-[gd_scene format=3 uid="uid://dtrutjgyikvba"]
+[gd_scene load_steps=2 format=3 uid="uid://dtrutjgyikvba"]
+
+[ext_resource type="AudioStream" uid="uid://l1cw4jwvp4r1" path="res://objects/object0.wav" id="1_37jft"]
 
 [node name="SpatialObject" type="Node3D"]
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
 
 [node name="AudioStreamPlayer3D" type="AudioStreamPlayer3D" parent="."]
+stream = ExtResource("1_37jft")
+attenuation_model = 2
+unit_size = 0.5
+autoplay = true
+panning_strength = 3.0
+emission_angle_enabled = true
+emission_angle_degrees = 30.0
+attenuation_filter_db = 0.0
+doppler_tracking = 1

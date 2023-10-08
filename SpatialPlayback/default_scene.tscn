@@ -16,10 +16,10 @@ background_mode = 2
 sky = SubResource("Sky_exytv")
 
 [node name="Node3D" type="Node3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152808, 0, 7.19602)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.00152808, 0, 0.00349092)
 script = ExtResource("1_dx432")
 
 [node name="Camera3D" type="Camera3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.32112, 0.187588, 5.7707)
+transform = Transform3D(-1, 0, -0.000715645, 0, 1, 0, 0.000715645, 0, -1, -0.241452, 0.187588, -5.39136)
 environment = SubResource("Environment_yl4jn")
 fov = 84.375
