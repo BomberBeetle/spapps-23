@@ -3,7 +3,7 @@ import numpy as np
 import random as rng
 import json
 
-im = cv2.imread("image_3-color_samp.png")
+im = cv2.imread("ngc13big.png")
 
 cv2.imshow('src', im)
 
